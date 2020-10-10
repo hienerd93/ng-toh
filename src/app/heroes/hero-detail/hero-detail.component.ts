@@ -28,6 +28,6 @@ export class HeroDetailComponent implements OnInit {
 
   gotoHeroes(hero: Hero) {
     const heroId = hero ? hero.id : null;
-    this.router.navigate(['/heroes', { id: heroId, foo: 'foo' }]);
+    this.router.navigate(['/superheroes', { id: heroId, foo: 'foo' }]);
   }
 }
