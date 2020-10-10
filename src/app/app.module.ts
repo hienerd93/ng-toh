@@ -10,12 +10,25 @@ import { HeroesModule } from './heroes/heroes.module';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { AuthModule } from './auth/auth.module';
 import { Router } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent, ComposeMessageComponent],
+  declarations: [
+    AppComponent,
+    PageNotFoundComponent,
+    ComposeMessageComponent,
+    MessagesComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
     BrowserAnimationsModule,
     HeroesModule,
     AuthModule,
