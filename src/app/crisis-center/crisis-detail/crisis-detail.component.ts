@@ -20,18 +20,18 @@ export class CrisisDetailComponent implements OnInit {
     public dialogService: DialogService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.route.data.subscribe((data: { crisis: Crisis }) => {
       this.editName = data.crisis.name;
       this.crisis = data.crisis;
     });
   }
 
-  cancel() {
+  cancel(): void {
     this.gotoCrises();
   }
 
-  save() {
+  save(): void {
     this.crisis.name = this.editName;
     this.gotoCrises();
   }
@@ -43,7 +43,7 @@ export class CrisisDetailComponent implements OnInit {
     return this.dialogService.confirm('Discard changes?');
   }
 
-  gotoCrises() {
+  gotoCrises(): void {
     const crisisId = this.crisis ? this.crisis.id : null;
     this.router.navigate(['../', { id: crisisId, foo: 'foo' }], {
       relativeTo: this.route,

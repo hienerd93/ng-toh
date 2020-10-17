@@ -20,13 +20,13 @@ export class HeroDetailComponent implements OnInit {
     private service: HeroService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.hero$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => this.service.getHero(params.get('id')))
     );
   }
 
-  gotoHeroes(hero: Hero) {
+  gotoHeroes(hero: Hero): void {
     const heroId = hero ? hero.id : null;
     this.router.navigate(['/superheroes', { id: heroId, foo: 'foo' }]);
   }

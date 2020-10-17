@@ -13,7 +13,7 @@ export class ComposeMessageComponent {
 
   constructor(private router: Router) {}
 
-  send() {
+  send(): void {
     this.sending = true;
     this.details = 'Sending Message...';
 
@@ -23,11 +23,11 @@ export class ComposeMessageComponent {
     }, 1000);
   }
 
-  cancel() {
+  cancel(): void {
     this.closePopup();
   }
 
-  closePopup() {
+  closePopup(): void {
     this.router.navigate([{ outlets: { popup: null } }]);
   }
 }

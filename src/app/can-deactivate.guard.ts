@@ -11,7 +11,7 @@ export interface CanComponentDeactivate {
 })
 export class CanDeactivateGuard
   implements CanDeactivate<CanComponentDeactivate> {
-  canDeactivate(component: CanComponentDeactivate) {
+  canDeactivate(component: CanComponentDeactivate): any {
     return component.canDeactivate ? component.canDeactivate() : true;
   }
 }

@@ -9,7 +9,7 @@ import { slideInAnimation } from './animations';
   animations: [slideInAnimation],
 })
 export class AppComponent {
-  getAnimationData(outlet: RouterOutlet) {
+  getAnimationData(outlet: RouterOutlet): any {
     return (
       outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation
     );

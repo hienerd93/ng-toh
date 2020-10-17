@@ -25,7 +25,7 @@ export class AdminDashboardComponent implements OnInit {
     this.modules = preloadStrategy.preloadedModules;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.sessionId = this.route.queryParamMap.pipe(
       map((params) => params.get('session_id') || 'None')
     );
