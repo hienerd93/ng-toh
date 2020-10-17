@@ -14,11 +14,11 @@ export class LoginComponent {
     this.setMessage();
   }
 
-  setMessage(): void {
+  setMessage() {
     this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
   }
 
-  login(): void {
+  login() {
     this.message = 'Trying to log in ...';
 
     this.authService.login().subscribe(() => {
@@ -35,7 +35,7 @@ export class LoginComponent {
     });
   }
 
-  logout(): void {
+  logout() {
     this.authService.logout();
     this.setMessage();
   }

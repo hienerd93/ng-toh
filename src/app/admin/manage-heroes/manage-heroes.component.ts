@@ -12,7 +12,7 @@ export class ManageHeroesComponent implements OnInit {
 
   constructor(private heroService: HeroService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getHeroes();
   }
 

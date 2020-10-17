@@ -98,7 +98,7 @@ export class HeroService {
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */
-  private handleError<T>(operation = 'operation', result?: T): any {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure
       console.error(error);
@@ -110,7 +110,7 @@ export class HeroService {
     };
   }
 
-  private log(message: string): void {
+  private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
   }
 }

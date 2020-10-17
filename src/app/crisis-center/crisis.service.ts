@@ -1,10 +1,9 @@
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Injectable } from '@angular/core';
 import { Crisis } from './crisis';
 import { CRISES } from './mock-crises';
-import { Hero } from '../heroes/hero';
 
 @Injectable({
   providedIn: 'root',
@@ -17,11 +16,11 @@ export class CrisisService {
 
   constructor() {}
 
-  getCrises(): Observable<Hero[]> {
+  getCrises() {
     return this.crises$;
   }
 
-  getCrisis(id: number | string): Observable<Hero> {
+  getCrisis(id: number | string) {
     return this.getCrises().pipe(
       map((crises) => crises.find((crisis) => crisis.id === +id))
     );
